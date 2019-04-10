@@ -1,0 +1,11 @@
+{% extends 'Quizzes/base.html' %}
+
+{% block content %}
+	{% if questionList %}
+		{% for item in questionList %}
+			<p> <a href="{% url 'quizzes:quizzes_detailView' item.id %}">{{ item.question_text}}</a> </p>
+		{% endfor %}
+	{% else %}
+		<h1 style="color: red; font-weight: 200;">Không có dữ liệu Question</h1>
+	{% endif %}
+{% endblock %}

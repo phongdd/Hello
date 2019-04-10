@@ -1,0 +1,12 @@
+{% extends 'Quizzes/base.html' %}
+
+{% block content %}
+	Hello, <b> {{ name }} </b>
+	<ul>
+		{% for item in taisan %}
+			{% if item != "Xe hơi" %}
+				<li>{{ item }}</li>
+			{% endif %}
+		{% endfor %}	
+	</ul>
+{% endblock %}

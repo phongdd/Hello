@@ -1,0 +1,11 @@
+{% extends "Quizzes/base.html" %}
+
+{% block content %}
+	{% if choiceList %}
+		{% for item in choiceList %}
+			<p>{{ item.choice_text }}</p>
+		{% endfor %}
+	{% else %}
+		<h3 style="color: red; font-weight: 200;">Không có dữ liệu Choice!!!</h3>
+	{% endif %}
+{% endblock %}

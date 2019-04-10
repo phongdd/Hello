@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="{% url 'sukien:process' %}" method="post">
+		{% csrf_token %}
+		{{f}}
+
+		<input type="submit" name="" value="Gởi">
+	</form>
+</body>
+</html>

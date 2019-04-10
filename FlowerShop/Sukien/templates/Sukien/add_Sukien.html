@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="{% url 'sukien:save' %}" method="post">
+		{% csrf_token %}
+		<p>{{ f.title }}</p>
+		<p>{{ f.content }}</p>
+		<input type="submit" value="Thêm">
+	</form>
+</body>
+</html>

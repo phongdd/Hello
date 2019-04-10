@@ -1,0 +1,16 @@
+{% extends "Quizzes/base.html" %}
+
+{% block content %}
+	{% if question %}
+		<form action="{% url 'quizzes:quizzes_vote' question.id %}" method="post">
+			{% csrf_token %}
+			<h3>{{ question.question_text }}</h3>
+			{% for item in question.choice_set.all %}
+				<input type="radio" name="choice" value="{{ item.id }}" >{{ item.choice_text }}<br/>
+			{% endfor %}
+			<p><input type="submit" name="Submit" value="Gửi"></p>
+		</form>
+	{% else %}
+		<h3 style="color: Red; font-weight: 200;">Không có dữ liệu câu hỏi!!</h3>
+	{% endif %}
+{% endblock %}
